@@ -5,7 +5,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-A simple, yet stunningly beautiful full-stack Hotel Room Booking System built for a college/lab project. It features a completely custom, premium glassmorphism dark-mode UI with dynamic animated backgrounds, powered by a robust REST API backend.
+A simple, yet stunningly beautiful full-stack Hotel Room Booking System . It features a completely custom, premium glassmorphism dark-mode UI with dynamic animated backgrounds, powered by a robust REST API backend.
 
 ## 🚀 Live Demo
 
