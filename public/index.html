@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Booking System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hotel Room Booking System</h1>
+        <p>Manage rooms, search availability, and manage bookings</p>
+    </header>
+
+    <div class="container">
+        <!-- Error & Success Messages -->
+        <div id="message-box" class="message-box hidden"></div>
+
+        <!-- Add New Room Section -->
+        <section class="card">
+            <h2><i class="fa-solid fa-plus-circle"></i> Add New Room</h2>
+            <form id="add-room-form">
+                <div class="form-group">
+                    <label>Room Number:</label>
+                    <input type="number" id="new-room-no" required>
+                </div>
+                <div class="form-group">
+                    <label>Room Type:</label>
+                    <select id="new-room-type" required>
+                        <option value="Single">Single</option>
+                        <option value="Double">Double</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Suite">Suite</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Price per Night (₹):</label>
+                    <input type="number" id="new-room-price" min="1" required>
+                </div>
+                <button type="submit">Add Room</button>
+            </form>
+        </section>
+
+        <!-- Room List Section -->
+        <section class="card">
+            <h2><i class="fa-solid fa-bed"></i> All Rooms</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Room No</th>
+                            <th>Type</th>
+                            <th>Price/Night</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rooms-tbody">
+                        <!-- Data populated via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Search Available Rooms -->
+        <section class="card">
+            <h2><i class="fa-solid fa-magnifying-glass"></i> Search Available Rooms</h2>
+            <form id="search-rooms-form">
+                <div class="form-group">
+                    <label>Room Type:</label>
+                    <select id="search-room-type" required>
+                        <option value="Single">Single</option>
+                        <option value="Double">Double</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Suite">Suite</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Check-in:</label>
+                    <input type="date" id="search-check-in" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-out:</label>
+                    <input type="date" id="search-check-out" required>
+                </div>
+                <button type="submit">Search Rooms</button>
+            </form>
+            <div id="search-results" class="search-results">
+                <!-- Search results injected here -->
+            </div>
+        </section>
+
+        <!-- Booking Form (Hidden by default) -->
+        <section class="card hidden" id="booking-section">
+            <h2><i class="fa-solid fa-calendar-check"></i> Book Room</h2>
+            <form id="booking-form">
+                <input type="hidden" id="book-room-id">
+                <div class="form-group">
+                    <label>Selected Room:</label>
+                    <input type="text" id="book-room-info" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Guest Name:</label>
+                    <input type="text" id="book-guest-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-in:</label>
+                    <input type="date" id="book-check-in" required disabled>
+                </div>
+                <div class="form-group">
+                    <label>Check-out:</label>
+                    <input type="date" id="book-check-out" required disabled>
+                </div>
+                <button type="submit">Confirm Booking</button>
+                <button type="button" class="btn-cancel" onclick="closeBookingForm()">Cancel</button>
+            </form>
+        </section>
+
+        <!-- Current Bookings Section -->
+        <section class="card">
+            <h2><i class="fa-solid fa-list"></i> Current Bookings</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Room No</th>
+                            <th>Type</th>
+                            <th>Guest</th>
+                            <th>Check-in</th>
+                            <th>Check-out</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookings-tbody">
+                        <!-- Data populated via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
