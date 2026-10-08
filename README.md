@@ -73,4 +73,4 @@ To run this project locally on your machine:
 - `DELETE /api/bookings/:id` - Cancel a booking and reset sequences if empty.
 
 ---
-*Developed as a full-stack college project demonstration.*
+*Developed as a production-ready full-stack application.*
