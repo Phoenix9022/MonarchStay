@@ -11,7 +11,7 @@ A simple, yet stunningly beautiful full-stack Hotel Room Booking System built fo
 
 **[View the Live Application Here!](https://hotel-booking-system-gyr5.onrender.com)**
 
-*(Note: Hosted on Render's free tier. The server may take ~50 seconds to spin up if it has been inactive. Because it uses SQLite on a free server, the database will reset to empty upon server restart, giving you a fresh slate for every presentation!)*
+
 
 ## ✨ Features
 
