@@ -1,123 +1,76 @@
-# Hotel Room Booking System
+# 👑 MonarchStay Hotel Booking System
 
-A simple but complete full-stack hotel room booking system built for a college/lab project.
+![Stunning Glassmorphism UI](https://img.shields.io/badge/UI-Glassmorphism-blueviolet?style=for-the-badge)
+![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-## Technologies
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Node.js
-- Express.js
-- SQLite
+A simple, yet stunningly beautiful full-stack Hotel Room Booking System built for a college/lab project. It features a completely custom, premium glassmorphism dark-mode UI with dynamic animated backgrounds, powered by a robust REST API backend.
 
-## Features
-- Add rooms
-- View rooms
-- Search available rooms
-- Book rooms
-- View bookings
-- Cancel bookings
-- Prevent double booking
+## 🚀 Live Demo
 
-## Installation
+**[View the Live Application Here!](https://hotel-booking-system-gyr5.onrender.com)**
 
-1. Install dependencies:
-```bash
-npm install
-```
+*(Note: Hosted on Render's free tier. The server may take ~50 seconds to spin up if it has been inactive. Because it uses SQLite on a free server, the database will reset to empty upon server restart, giving you a fresh slate for every presentation!)*
 
-2. Start the server:
-```bash
-npm start
-```
+## ✨ Features
 
-3. Open your browser and navigate to:
-```
-http://localhost:3000
-```
+- **Premium UI:** Custom Glassmorphism design with animated orbs and moving cinematic backgrounds.
+- **Room Management:** Add new hotel rooms with specific room numbers, types (Single, Double, Deluxe, Suite), and prices.
+- **Smart Booking System:** Search for available rooms by date. The system automatically prevents double-booking and date overlaps!
+- **Dynamic Statuses:** Real-time Room Directory that instantly updates room availability based on current active bookings.
+- **RESTful API:** Clean frontend-backend separation via Express.js.
 
-## API Documentation
+## 🛠️ Technology Stack
 
-### 1. Add Room
-`POST /api/rooms`
-Request:
-```json
-{
-  "room_no": 101,
-  "type": "Single",
-  "price": 1500
-}
-```
-Response:
-```json
-{
-  "id": 1,
-  "room_no": 101,
-  "type": "Single",
-  "price": 1500,
-  "status": "Available"
-}
-```
+**Frontend:**
+- React (via Vite)
+- Vanilla CSS3 (Custom Glassmorphism, CSS Animations)
+- FontAwesome Icons
 
-### 2. Get All Rooms
-`GET /api/rooms`
-Response:
-```json
-[
-  {
-    "id": 1,
-    "room_no": 101,
-    "type": "Single",
-    "price": 1500,
-    "status": "Available"
-  }
-]
-```
+**Backend & Database:**
+- Node.js & Express.js
+- SQLite3 (Local `hotel.db` database)
 
-### 3. Search Available Rooms
-`GET /api/rooms/available?type=Single&checkIn=2026-10-10&checkOut=2026-10-12`
-Response: Array of available room objects.
+## 💻 Local Installation
 
-### 4. Create Booking
-`POST /api/bookings`
-Request:
-```json
-{
-  "room_id": 1,
-  "guest_name": "John",
-  "check_in": "2026-10-10",
-  "check_out": "2026-10-12"
-}
-```
-Response:
-```json
-{
-  "message": "Room booked successfully",
-  "bookingId": 1
-}
-```
+To run this project locally on your machine:
 
-### 5. Get Bookings
-`GET /api/bookings`
-Response:
-```json
-[
-  {
-    "booking_id": 1,
-    "room_no": 101,
-    "type": "Single",
-    "guest_name": "John",
-    "check_in": "2026-10-10",
-    "check_out": "2026-10-12"
-  }
-]
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/hotel-booking-system.git
+   cd hotel-booking-system
+   ```
 
-### 6. Cancel Booking
-`DELETE /api/bookings/:id`
-Response:
-```json
-{
-  "message": "Booking cancelled successfully"
-}
-```
+2. **Install Backend Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Install Frontend Dependencies & Build**
+   ```bash
+   cd client
+   npm install
+   npm run build
+   cd ..
+   ```
+
+4. **Start the Server**
+   ```bash
+   npm start
+   ```
+
+5. **View the App**
+   Open your browser and navigate to `http://localhost:3000`.
+
+## 📡 API Endpoints
+
+- `GET /api/rooms` - Retrieve all rooms and their current booking status.
+- `GET /api/rooms/available` - Search for rooms without booking overlaps.
+- `POST /api/rooms` - Add a new room.
+- `GET /api/bookings` - Retrieve all active bookings.
+- `POST /api/bookings` - Create a new booking (requires date validation).
+- `DELETE /api/bookings/:id` - Cancel a booking and reset sequences if empty.
+
+---
+*Developed as a full-stack college project demonstration.*
